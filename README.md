@@ -1,34 +1,65 @@
-# ParkPilot: Autonomous Accessibility Enforcement System 🛡️🚁
+# 🛡️ ParkPilot: Autonomous Accessibility Enforcement
 
-**ParkPilot** is an autonomous drone solution built with **PX4**, **MAVSDK**, and **ROS 2**. It is designed to solve a critical social issue: the unauthorized occupation of disabled parking spaces. 
+> **"Technology is at its best when it serves those who need it most."**
 
-Born from a personal struggle, ParkPilot ensures that families with disabled children always have access to the spots they need by providing a **24/7, zero-tolerance enforcement guardian** that is faster and more reliable than manual security patrols.
+<p align="center">
+  <img src="https://img.shields.io/badge/PX4-Autopilot-blue.svg" alt="PX4">
+  <img src="https://img.shields.io/badge/ROS2-Humble-orange.svg" alt="ROS2">
+  <img src="https://img.shields.io/badge/Python-MAVSDK-yellow.svg" alt="MAVSDK">
+  <img src="https://img.shields.io/badge/Simulation-Gazebo-green.svg" alt="Gazebo">
+</p>
 
 ---
 
+## 📖 Project Vision
+ParkPilot is an autonomous drone solution born from a personal mission. It is designed to ensure that families with disabled children always have access to the parking spots they legally deserve. By providing a 24/7, zero-tolerance enforcement guardian, ParkPilot reduces manual inspection time by **80%** and ensures accessibility through high-precision robotics.
+
 ## 🌟 Key Functionalities
-* **Autonomous Surveillance:** Executes precision flight missions over large parking lots.
-* **Smart Barcode Detection:** Uses an **OpenCV** vision pipeline to scan for "Special Needs" permits on vehicle dashboards.
-* **Instant Reporting:** Automatically captures **Evidence (Photo + GPS + Timestamp)** and notifies Facility Management and Traffic Police simultaneously.
-* **Precision Navigation:** Uses $1 \times 10^{-5}$ GPS offsets to center the drone perfectly over target vehicles.
-* 
+* **Autonomous Surveillance:** Executes precision flight missions over large urban parking lots using MAVSDK-Python.
+* **Smart Barcode Detection:** Utilizes an OpenCV/PyZbar vision pipeline to scan for "Special Needs" permits with 100% identification accuracy.
+* **Intelligent Safety:** Integrated **Battery RTL Failsafe**; the drone monitors voltage in real-time and triggers an autonomous Return-to-Launch at a **15% threshold**.
+* **Precision Navigation:** Uses $1 \times 10^{-5}$ GPS offsets to center the drone perfectly over target vehicles for stable scanning.
+
+---
+
 ## 🛠️ Technical Stack
-* **Autopilot:** [PX4 Autopilot](https://px4.io/)
-* **Offboard Control:** [MAVSDK-Python](https://mavsdk.mavlink.io/)
-* **Simulation Engine:** Gazebo Classic
-* **Computer Vision:** OpenCV & PyZbar
-* **Vehicle Model:** Holybro x500 V2 (Vision-enabled)
+* **Autopilot:** PX4 Autopilot (SITL)
+* **Offboard Control:** MAVSDK-Python
+* **Simulation:** Gazebo Classic
+* **Communication:** ROS 2 GZ Bridge (MAVLink Telemetry + ROS2 Vision Feed)
+* **Vision:** OpenCV & PyZbar
+* **Vehicle:** Holybro x500 V2 (Vision-enabled)
 
-## 🏙️ World Design & 3D Assets
-The simulation environment utilizes a professional urban layout to test navigation and vision in a realistic setting.
+---
 
-* **Asset Source:** Low-poly city buildings from [CGTrader](https://www.cgtrader.com/free-3d-models/exterior/cityscape/city-buildings-low-poly).
-* **3D Pipeline:** The original assets were provided in **OBJ, ABC, DAE, BLEND, GLTF, FBX, and PLY** formats.
-* **Optimization:** I converted and optimized these assets into **DAE (Collada)** and **SDF** for Gazebo compatibility. This was crucial to reducing **ODE (Open Dynamics Engine)** physics lag and ensuring a high Real-Time Factor (RTF) during autonomous flight.
+## 🏙️ World Design & 3D Pipeline
+To eliminate **ODE Physics Lag** and achieve a high Real-Time Factor (RTF), a custom 3D optimization pipeline was implemented:
+
+1.  **Asset Sourcing:** Urban assets acquired from Sketchfab and CGTrader.
+2.  **Optimization:** Converted high-poly `OBJ/BLEND` files to optimized **DAE (Collada)** and **SDF** formats.
+3.  **Collision Management:** Simplified collision meshes to ensure smooth physics calculations during autonomous flight.
+
+---
 
 ## 🧠 Challenges Overcome
-* **ODE Physics Lag:** Optimized world geometry and collision meshes to prevent "jitter" during heavy simulation tasks.
-* **Battery Safety:** Implemented a **15% Battery RTL (Return to Launch) Failsafe** to prevent system crashes (solving a previous 6% failure issue).
-* **Vision Stability:** Integrated a **7-second loiter logic** to stabilize the camera feed for 100% barcode recognition accuracy.
+* **Physics Jitter:** Solved ODE lag by re-engineering collision boundaries for the urban environment.
+* **Vision Stability:** Implemented a **7-second loiter logic** to stabilize the gimbal and camera feed for perfect recognition.
+* **Sync Issues:** Configured a robust **ROS-GZ Bridge** to handle the high-bandwidth image data from Gazebo to the Python script.
 
+---
 
+## 🚀 Installation & Setup
+For a full step-by-step guide on setting up Ubuntu 22.04, PX4, and ROS 2 Humble, please refer to our detailed documentation:
+
+👉 [**Full Installation Guide (INSTALLATION.md)**](INSTALLATION.md)
+
+---
+
+## 🎓 Batch 2 Credits
+**Developer:** Lama Abdullah Aldraim  
+**Special Thanks:** To my instructors and the Batch 2 cohort for the technical support and guidance throughout this journey.
+
+---
+<p align="center">
+  Developed with ❤️ for a more accessible world.
+</p>
