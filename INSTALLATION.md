@@ -1,4 +1,4 @@
-🏗️ The ParkPilot Ecosystem: Setup & Simulation Guide
+# 🏗️ The ParkPilot Ecosystem: Setup & Simulation Guide
 
 Welcome to the build phase! This project isn't just about code; it’s about building a High-Tech Guardian. This guide will help you set up the brain, body, and eyes of your drone.
 📋 Table of Contents
@@ -17,7 +17,7 @@ Welcome to the build phase! This project isn't just about code; it’s about bui
 
     Troubleshooting & Performance
 
-💻 Level 0: The Foundation (Ubuntu 22.04)
+## 💻 Level 0: The Foundation (Ubuntu 22.04)
 
 Before we fly, we need the right ground. ParkPilot is optimized for Ubuntu 22.04 LTS (Jammy Jellyfish).
 
@@ -27,7 +27,7 @@ Before we fly, we need the right ground. ParkPilot is optimized for Ubuntu 22.04
 
     Virtual Machine: Use UTM (for Mac) or VMWare/VirtualBox (for Windows) if you just want to test, but beware of "Simulation Lag."
 
-🧠 Level 1: The Central Nervous System (PX4 Autopilot)
+## 🧠 Level 1: The Central Nervous System (PX4 Autopilot)
 
 First, we install the flight controller. This is what keeps your x500 stable in the air and manages the low-level motor mixing.
 
@@ -49,7 +49,7 @@ Bash
 
     Note: After the script finishes, you must reboot your computer.
 
-☕ Level 2: The Fast-Track Trainer (jMAVSim)
+## ☕ Level 2: The Fast-Track Trainer (jMAVSim)
 
 Need to test your Python logic without waiting for a heavy 3D world to load? Use jMAVSim. It’s lightweight and runs on Java.
 
@@ -63,11 +63,11 @@ Bash
 
     make px4_sitl jmavsim
 
-🏙️ Level 3: World Building (Gazebo & 3D Assets)
+## 🏙️ Level 3: World Building (Gazebo & 3D Assets)
 
 This is where ParkPilot gets real. You are the architect of your own city!
 
-    Asset Shopping: Download professional models from Sketchfab or CGTrader.
+    Asset Shopping: Download models/worlds from Gazebo.com , Sketchfab.com or Cgtrader.com.
 
     The Optimization Hack: If the simulation lags, convert assets to DAE (Collada) and simplify the collision meshes.
 
@@ -81,7 +81,7 @@ Bash
 
     PX4_GZ_WORLD=parkpilotworld PX4_GZ_MODEL_POSE="6.16,-71.90,3,0,0,0" make px4_sitl gz_x500_gimbal
 
-📡 Level 4: The Vision Pipeline (ROS 2 Humble)
+## 📡 Level 4: The Vision Pipeline (ROS 2 Humble)
 
 The drone has a camera, but it needs a "Data Pipe" to send images to your Python script for analysis.
 
@@ -100,7 +100,7 @@ Bash
 
     ros2 run ros_gz_bridge parameter_bridge /world/parkpilotworld/model/x500_gimbal_0/link/camera_link/sensor/camera/image@sensor_msgs/msg/Image[gz.msgs.Image
 
-🦅 Level 5: Pilot Mode (MAVSDK & Python)
+## 🦅 Level 5: Pilot Mode (MAVSDK & Python)
 
 Final level! This is where your Batch 2 autonomous logic takes control of the vehicle.
 
