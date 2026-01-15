@@ -64,9 +64,9 @@ For a full step-by-step guide on setting up Ubuntu 22.04, PX4, and ROS 2 Humble,
 ## 🎓 Batch 2 Credits
 **Developer:** Lama Abdullah Aldraim  
 **Special Thanks:** To Tuwaiq Academy my instructors 
-Ahmed Al-Zakari
-Riyad Al-Rashidi
-Abdulsalam Al-Abdulkareem 
+#### Ahmed Al-Zakari
+#### Riyad Al-Rashidi
+#### Abdulsalam Al-Abdulkareem 
 and my classmates Batch2 drone programming bootcamp
 for their  technical support and guidance throughout this journey.
 
