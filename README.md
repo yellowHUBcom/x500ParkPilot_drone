@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="Models/textures/barcode2.jpg" width="200" title="Secondary Identification Target">
+  <br>
+  <i>Figure: Secondary Barcode Permit (barcode2.jpg)</i>
+</p>
+
 # 🛡️ ParkPilot: Autonomous Accessibility Enforcement
 
 > **"Technology is at its best when it serves those who need it most."**
